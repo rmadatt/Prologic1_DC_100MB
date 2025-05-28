@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], input[type="number"] { width: 100%; padding: 8px; }
+        .error { color: red; }
+        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Data Collection Form</h1>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="0" max="150" required>
+        </div>
+        <div class="form-group">
+            <label>5 Interests:</label>
+            {% for i in range(1, 6) %}
+                <input type="text" name="interest{{ i }}" placeholder="Interest {{ i }}" required>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label>5 Likes:</label>
+            {% for i in range(1, 6) %}
+                <input type="text" name="like{{ i }}" placeholder="Like {{ i }}" required>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label>5 Dislikes:</label>
+            {% for i in range(1, 6) %}
+                <input type="text" name="dislike{{ i }}" placeholder="Dislike {{ i }}" required>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label>5 Daily Habits:</label>
+            {% for i in range(1, 6) %}
+                <input type="text" name="habit{{ i }}" placeholder="Habit {{ i }}" required>
+            {% endfor %}
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
