@@ -17,14 +17,13 @@ A deployment platform (e.g., Render, Heroku, PythonAnywhere)
 
 Local Setup (Optional)
 
-Clone the repository:git clone https://github.com/<your-username>/data-collection-app.git
-cd data-collection-app
+Clone the repository
 
 
-Install dependencies:pip install -r requirements.txt
+Install dependencies
 
 
-Run the app:python app.py
+Run the app
 
 
 
